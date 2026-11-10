@@ -1,6 +1,5 @@
 {
-  "installCommand": "npm ci --prefix web",
-  "buildCommand": "npm run build --prefix web",
-  "outputDirectory": "web/dist/web/browser",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/web/browser",
   "rewrites": [{ "source": "/((?!.*\\.).*)", "destination": "/index.html" }]
 }
