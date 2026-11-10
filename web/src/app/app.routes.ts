@@ -1,9 +1,17 @@
 import { Routes } from '@angular/router';
-import { Home } from './home/home';
-import { VersaoCompleta } from './versao-completa/versao-completa';
 
+/** Rotas com carregamento sob demanda: cada página é um pacote separado. */
 export const routes: Routes = [
-  { path: '', component: Home, title: 'Recompila: o que você quer agora?' },
-  { path: 'versao-completa', component: VersaoCompleta, title: 'Recompila: versão completa' },
+  {
+    path: '',
+    loadComponent: () => import('./features/home/home.page').then((m) => m.HomePage),
+    title: 'Recompila: o que você quer agora?',
+  },
+  {
+    path: 'versao-completa',
+    loadComponent: () =>
+      import('./features/versao-completa/versao-completa.page').then((m) => m.VersaoCompletaPage),
+    title: 'Recompila: versão completa',
+  },
   { path: '**', redirectTo: '' },
 ];

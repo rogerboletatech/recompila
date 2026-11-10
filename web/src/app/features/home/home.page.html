@@ -1,0 +1,37 @@
+<section class="conversa">
+  @if (resposta(); as r) {
+    <div class="resposta">
+      <div class="centro">
+        <span class="sub">você: “{{ disse() }}”</span>
+        <h1>{{ r.titulo }}</h1>
+      </div>
+
+      <div class="grade">
+        @for (card of r.cards; track card.eyebrow; let i = $index) {
+          <app-intent-card [card]="card" [cor]="cores[i]" />
+        }
+      </div>
+
+      <div class="acoes">
+        <a mat-flat-button routerLink="/versao-completa">Começar agora</a>
+        <a mat-stroked-button [routerLink]="['/versao-completa']" [fragment]="r.ancora">Ver os detalhes</a>
+      </div>
+    </div>
+  } @else {
+    <div class="centro">
+      <div class="orb" aria-hidden="true"></div>
+      <h1>Oi. O que você quer agora?</h1>
+      <p class="sub">Tecnologia muda o tempo todo. Fala do seu jeito, eu monto o resto.</p>
+    </div>
+  }
+
+  <app-chat-input (enviado)="responder($event)" />
+
+  <div class="sugestoes" role="group" aria-label="Sugestões">
+    @for (chave of sugestoes(); track chave) {
+      <button mat-stroked-button type="button" (click)="escolher(chave, rotulo(chave))">
+        {{ rotulo(chave) }}
+      </button>
+    }
+  </div>
+</section>
