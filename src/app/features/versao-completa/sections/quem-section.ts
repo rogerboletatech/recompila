@@ -59,7 +59,7 @@ export class QuemSectionComponent {
     { rotulo: 'DEV NOVO, VEM TAMBÉM', titulo: 'Você manja a ferramenta. Falta entender o porquê.', texto: 'Convive com quem segurou sistema crítico por anos. Ensina Angular e Git, aprende negócio, arquitetura e como as coisas quebram de verdade.' },
     { rotulo: 'DEV BOM QUE QUER IR ALÉM', titulo: 'Você entrega. Agora quer fundamento.', texto: 'Desenhar soluções resilientes, defender uma arquitetura e saber dizer não para projeto que nasce sem discovery.' },
     { rotulo: 'EM RECOLOCAÇÃO', titulo: 'Foi desligado? Vem com prioridade.', texto: 'Muitas vezes o que faltou foi detalhe: Git, teste, um projeto para mostrar. A gente acha esses detalhes e fecha um por um.' },
-    { rotulo: 'IT LEAD · COORDENADOR DE SISTEMAS', titulo: 'Você apoia o produto. Precisa entender a engenharia.', texto: 'Pouco código, muita decisão. Apoia o PM a definir o projeto e define a solução junto com o arquiteto do time, com visão do que é viável, do custo e do risco.' },
+    { rotulo: 'IT LEAD · COORDENADOR DE SISTEMAS', titulo: 'Você apoia o produto. Precisa entender a engenharia.', texto: 'Pouco código, muita decisão. Define a solução junto com o arquiteto, estima a complexidade, o tamanho do time e o orçamento, e entrega o projeto junto com o PM.' },
     { rotulo: 'PRODUCT MANAGER', titulo: 'Você conhece produto. Falta o método.', texto: 'Discovery de verdade e Event Storming para desenhar o negócio junto com os devs, antes de escrever a primeira história.' },
   ];
 }
