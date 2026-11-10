@@ -10,6 +10,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { QuemSectionComponent } from './sections/quem-section';
+import { FuturoSectionComponent } from './sections/futuro-section';
+import { PrivacidadeSectionComponent } from './sections/privacidade-section';
 import {
   CLASSES,
   CORES_PERSONAGEM,
@@ -36,6 +39,9 @@ import {
     MatInputModule,
     MatSelectModule,
     MatToolbarModule,
+    QuemSectionComponent,
+    FuturoSectionComponent,
+    PrivacidadeSectionComponent,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './versao-completa.page.html',
