@@ -118,7 +118,7 @@ export class FuturoSectionComponent {
     { era: 'Era QA', hoje: 'Dono da qualidade e do Golden Sample' },
     { era: 'Era DBA ou dev de procedures', hoje: 'Dono dos dados e da performance' },
     { era: 'Era arquiteto', hoje: 'Quem desenha e revisa o que a IA gera' },
-    { era: 'Era dev front ou back', hoje: 'Completa o outro lado com IA e pontes' },
+    { era: 'Era dev front ou back', hoje: 'Evolui para engenheiro de software e desenha a solução sem depender de ninguém' },
   ];
 
   readonly regrasIa = [

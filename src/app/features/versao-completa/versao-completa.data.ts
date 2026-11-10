@@ -22,8 +22,8 @@ export const TRACKS: readonly Track[] = [
   {
     id: 'devs', label: 'Devs', sub: 'do estagiário ao sênior', cor: '#2F5BFF', fundo: '#F2F4FF',
     tag: 'TRILHA DEVS', titulo: 'Engenheiro de software: full stack, com arquitetura e liderança técnica',
-    para: 'devs front end, back end e full stack, tech leads e arquitetos, das antigas e novos, e quem está em recolocação.',
-    aprende: ['Pontes do seu stack para Java ou C# moderno', 'Arquitetura: C4, ADR, eventos e resiliência', 'Dados, testes e observabilidade', 'Revisar e testar o código que a IA gera', 'Front end e back end: quem domina os dois lados entrega mais', 'Liderança técnica: conduzir o time e decidir com trade-offs'],
+    para: 'devs front end e back end que querem evoluir para engenheiro de software, full stack, tech leads e arquitetos, das antigas e novos, e quem está em recolocação.',
+    aprende: ['Pontes do seu stack para Java ou C# moderno', 'Arquitetura: C4, ADR, eventos e resiliência', 'Dados, testes e observabilidade', 'Revisar e testar o código que a IA gera', 'Sair de front ou back e virar engenheiro de software: quem desenha a solução não depende de ninguém', 'Liderança técnica: conduzir o time e decidir com trade-offs'],
     ia: 'IA como par de programação: com contexto, revisão e testes.',
     projeto: 'Um case do começo ao fim, validado pelo Golden Sample.',
     ancora: 'futuro', linkLabel: 'Ver o futuro do dev',
