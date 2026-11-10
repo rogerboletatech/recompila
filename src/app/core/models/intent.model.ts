@@ -11,7 +11,9 @@ export interface IntentCard {
 export interface Intent {
   readonly chip: string;
   readonly titulo: string;
-  /** Rota da versão completa com âncora para o assunto. */
+  /** Âncora da versão completa para o assunto. */
   readonly ancora: string;
+  /** Trilha a abrir na versão completa (devs, pm, qa ou kids), quando houver. */
+  readonly trilha?: 'devs' | 'pm' | 'qa' | 'kids';
   readonly cards: readonly IntentCard[];
 }

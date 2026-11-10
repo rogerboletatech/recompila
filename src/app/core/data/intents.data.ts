@@ -6,6 +6,7 @@ export const INTENTS: Readonly<Record<IntentKey, Intent>> = {
     chip: 'Atualizar meu stack',
     titulo: 'Bora atualizar sem começar do zero.',
     ancora: 'trilhas',
+    trilha: 'devs',
     cards: [
       { eyebrow: 'Sua trilha', destaque: 'Devs', detalhe: 'pontes do seu stack para o de hoje, com IA' },
       { eyebrow: 'Tempo', destaque: '10 min', detalhe: 'por dia, no celular' },
@@ -15,7 +16,7 @@ export const INTENTS: Readonly<Record<IntentKey, Intent>> = {
   vaga: {
     chip: 'Quero uma vaga',
     titulo: 'Falta menos do que você imagina.',
-    ancora: 'raiox',
+    ancora: 'vagas',
     cards: [
       { eyebrow: 'Vagas analisadas', destaque: '6', detalhe: 'reais, do LinkedIn' },
       { eyebrow: 'O que mais pedem', destaque: 'Fundamento', detalhe: 'mais do que ferramenta' },
@@ -35,7 +36,8 @@ export const INTENTS: Readonly<Record<IntentKey, Intent>> = {
   produto: {
     chip: 'Sou PM, PO ou agilista',
     titulo: 'Método para quem já entende de produto.',
-    ancora: 'pms',
+    ancora: 'trilhas',
+    trilha: 'pm',
     cards: [
       { eyebrow: 'Sua trilha', destaque: 'Produto', detalhe: 'discovery e Event Storming' },
       { eyebrow: 'Junto com', destaque: 'Os devs', detalhe: 'desenhando o negócio' },
@@ -46,6 +48,7 @@ export const INTENTS: Readonly<Record<IntentKey, Intent>> = {
     chip: 'Sou QA',
     titulo: 'De testador a dono da qualidade.',
     ancora: 'trilhas',
+    trilha: 'qa',
     cards: [
       { eyebrow: 'Sua trilha', destaque: 'Qualidade', detalhe: 'automação e testes de contrato' },
       { eyebrow: 'Superpoder', destaque: 'Golden Sample', detalhe: 'conferir contra a fonte da verdade' },
@@ -55,7 +58,8 @@ export const INTENTS: Readonly<Record<IntentKey, Intent>> = {
   kids: {
     chip: 'Levar para uma escola',
     titulo: 'Tecnologia é brincadeira séria.',
-    ancora: 'kids',
+    ancora: 'trilhas',
+    trilha: 'kids',
     cards: [
       { eyebrow: 'Idades', destaque: '6 a 14', detalhe: 'com e sem computador' },
       { eyebrow: 'Cada encontro', destaque: '50 min', detalhe: 'missão, mostra e insígnia' },

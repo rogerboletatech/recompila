@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
@@ -49,6 +49,13 @@ import {
 })
 export class VersaoCompletaPage {
   readonly tracks = TRACKS;
+
+  constructor() {
+    const trilhaUrl = this.rota.snapshot.queryParamMap.get('trilha') as TrackId | null;
+    if (trilhaUrl && TRACKS.some((t) => t.id === trilhaUrl)) {
+      this.trilhaId.set(trilhaUrl);
+    }
+  }
   readonly requisitos = REQUISITOS;
   readonly classes = CLASSES;
   readonly cores = CORES_PERSONAGEM;
@@ -79,6 +86,7 @@ export class VersaoCompletaPage {
   readonly classeId = signal('eng');
   readonly corIndex = signal(0);
   private sugestoes = 0;
+  private readonly rota = inject(ActivatedRoute);
   readonly classeAtual = computed(() => CLASSES.find((c) => c.id === this.classeId()) ?? CLASSES[0]);
   readonly corAtual = computed(() => CORES_PERSONAGEM[this.corIndex()] ?? CORES_PERSONAGEM[0]);
   readonly rotuloPersonagem = computed(() => this.nomePersonagem().trim() || 'Seu personagem');
