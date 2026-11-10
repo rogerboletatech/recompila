@@ -1,0 +1,129 @@
+<header class="topo">
+  <a routerLink="/" class="marca"><span class="selo" aria-hidden="true">&gt;_</span>Recompila</a>
+  <nav class="ancoras" aria-label="Seções">
+    <a href="#camadas">Camadas</a>
+    <a href="#fluxos">Fluxos</a>
+    <a href="#dados">Dados</a>
+    <a href="#fases">Fases</a>
+    <a href="#modelo">Modelo</a>
+  </nav>
+</header>
+
+<section class="abertura">
+  <p class="kicker">// arquitetura aberta</p>
+  <h1>Como o Recompila funciona por dentro. <span class="destaque">Sem segredo.</span></h1>
+  <p class="lead">Começa com ferramentas que todo mundo já usa e só vira sistema próprio quando o grupo provar que funciona. Cada camada, cada dado e cada real ficam visíveis.</p>
+</section>
+
+<section id="camadas" class="bloco">
+  <p class="kicker">// camadas</p>
+  <h2>Cinco camadas, de quem usa até o que fica público.</h2>
+  <div class="camadas">
+    @for (camada of camadas; track camada.nome) {
+      <div class="camada">
+        <div class="rotulo">
+          <strong>{{ camada.nome }}</strong>
+          <span>{{ camada.descricao }}</span>
+        </div>
+        <div class="itens">
+          @for (item of camada.itens; track item.titulo) {
+            <mat-card appearance="outlined" class="item">
+              <mat-card-content>
+                <strong>{{ item.titulo }}</strong>
+                <span>{{ item.detalhe }}</span>
+              </mat-card-content>
+            </mat-card>
+          }
+        </div>
+      </div>
+    }
+  </div>
+</section>
+
+<section id="fluxos" class="bloco claro">
+  <p class="kicker">// fluxos principais</p>
+  <h2>Três caminhos passam pelo sistema.</h2>
+  @for (fluxo of fluxos; track fluxo.quem) {
+    <div class="fluxo">
+      <strong class="quem">{{ fluxo.quem }}</strong>
+      <div class="passos">
+        @for (passo of fluxo.passos; track passo) {
+          <span class="passo">{{ passo }}</span>
+          <span class="seta" aria-hidden="true">→</span>
+        }
+        <span class="passo final">{{ fluxo.destaque }}</span>
+      </div>
+    </div>
+  }
+</section>
+
+<section id="dados" class="bloco">
+  <div class="dados">
+    <div class="dados-texto">
+      <p class="kicker">// dados e privacidade</p>
+      <h2>Guardamos o mínimo. Mostramos o máximo.</h2>
+      <p class="lead escuro">O que é pessoal fica protegido. O que é do grupo fica aberto para todo mundo conferir.</p>
+    </div>
+    <div class="tabela">
+      <table mat-table [dataSource]="dados" class="w-100">
+        <ng-container matColumnDef="dado">
+          <th mat-header-cell *matHeaderCellDef>Dado</th>
+          <td mat-cell *matCellDef="let linha">{{ linha.dado }}</td>
+        </ng-container>
+        <ng-container matColumnDef="onde">
+          <th mat-header-cell *matHeaderCellDef>Onde fica</th>
+          <td mat-cell *matCellDef="let linha">{{ linha.onde }}</td>
+        </ng-container>
+        <ng-container matColumnDef="quemVe">
+          <th mat-header-cell *matHeaderCellDef>Quem vê</th>
+          <td mat-cell *matCellDef="let linha">{{ linha.quemVe }}</td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="colunasDados"></tr>
+        <tr mat-row *matRowDef="let linha; columns: colunasDados" [class.destaque-linha]="destacar(linha)"></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="fases" class="bloco escuro">
+  <p class="kicker">// fases</p>
+  <h2>Sistema próprio só depois de provar que funciona.</h2>
+  <div class="fases">
+    @for (fase of fases; track fase.titulo) {
+      <mat-card appearance="outlined" class="fase" [class.atual]="fase.atual">
+        <mat-card-content>
+          <span class="rotulo-fase">{{ fase.rotulo }}</span>
+          <strong class="titulo-fase">{{ fase.titulo }}</strong>
+          <p>{{ fase.texto }}</p>
+          <p class="nota">{{ fase.nota }}</p>
+        </mat-card-content>
+      </mat-card>
+    }
+  </div>
+</section>
+
+<section id="modelo" class="bloco">
+  <p class="kicker">// modelo</p>
+  <h2>Caminhos em estudo. A decisão vem depois do piloto.</h2>
+  <p class="lead escuro">Primeiro provar que funciona. Depois escolher entre produto, instituto ou os dois, com contador e advogado ao lado. O material e o código já nascem abertos.</p>
+  <div class="caminhos">
+    @for (caminho of caminhos; track caminho.titulo) {
+      <mat-card appearance="outlined" class="caminho" [class.ambar]="caminho.cor === 'ambar'">
+        <mat-card-content>
+          <span class="rotulo-fase">{{ caminho.rotulo }}</span>
+          <strong class="titulo-fase">{{ caminho.titulo }}</strong>
+          <ul>
+            @for (item of caminho.itens; track item) {
+              <li>{{ item }}</li>
+            }
+          </ul>
+        </mat-card-content>
+      </mat-card>
+    }
+  </div>
+</section>
+
+<footer class="rodape">
+  <span>Recompila · arquitetura aberta</span>
+  <a routerLink="/versao-completa">Voltar para o site</a>
+</footer>

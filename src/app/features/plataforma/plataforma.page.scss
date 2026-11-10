@@ -1,0 +1,78 @@
+:host { display: block; background: #f6f6f3; color: #12161c; font-family: 'IBM Plex Sans', system-ui, sans-serif; }
+a { color: #2f5bff; }
+
+.topo {
+  background: #0e1320; color: #f6f6f3; border-bottom: 1px solid #222a3b;
+  display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between;
+  padding: 16px 24px;
+}
+.marca { display: flex; align-items: center; gap: 10px; color: #f6f6f3; text-decoration: none; font-weight: 700; font-size: 20px; }
+.selo {
+  font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 600;
+  background: #2f5bff; color: #fff; border-radius: 8px; padding: 6px 8px;
+}
+.ancoras { display: flex; flex-wrap: wrap; gap: 22px; font-size: 15px; }
+.ancoras a { color: #c5cbd8; text-decoration: none; }
+
+.abertura { background: #0e1320; color: #f6f6f3; padding: 72px 24px 96px; }
+.abertura > * { max-width: 900px; margin-left: auto; margin-right: auto; }
+.abertura h1 { margin: 16px auto 0; font-weight: 700; font-size: clamp(38px, 5.6vw, 68px); line-height: 1.04; letter-spacing: -0.03em; }
+.lead { font-size: 19px; line-height: 1.6; color: #c5cbd8; margin: 24px auto 0; max-width: 900px; }
+.lead.escuro { color: #3e4654; font-size: 17px; }
+
+.kicker { font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #9db0ff; margin: 0; }
+.destaque { color: #9db0ff; }
+
+.bloco { padding: 88px 24px; max-width: 1160px; margin: 0 auto; display: flex; flex-direction: column; gap: 36px; }
+.bloco.claro { background: #ffffff; max-width: none; border-top: 1px solid #e1e3dd; }
+.bloco.claro > * { max-width: 1160px; width: 100%; margin-left: auto; margin-right: auto; }
+.bloco.escuro { background: #0e1320; color: #f6f6f3; max-width: none; }
+.bloco.escuro > * { max-width: 1160px; width: 100%; margin-left: auto; margin-right: auto; }
+.bloco h2 { margin: 0; font-weight: 700; font-size: clamp(28px, 4vw, 46px); line-height: 1.08; letter-spacing: -0.02em; max-width: 820px; }
+
+.camadas { display: flex; flex-direction: column; gap: 14px; }
+.camada { background: #ecede7; border-radius: 18px; padding: 18px; display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+.rotulo { flex: 0 0 170px; display: flex; flex-direction: column; gap: 2px; }
+.rotulo strong { font-size: 18px; }
+.rotulo span { font-size: 13px; color: #5a6271; }
+.itens { flex: 1 1 520px; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+.item { border-radius: 12px; background: #ffffff; }
+.item mat-card-content { display: flex; flex-direction: column; gap: 4px; }
+.item strong { font-size: 15px; }
+.item span { font-size: 13px; color: #3e4654; }
+
+.fluxo { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.quem { flex: 0 0 150px; font-size: 17px; }
+.passos { flex: 1 1 600px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.passo { background: #f6f6f3; border: 1px solid #e1e3dd; border-radius: 10px; padding: 12px 14px; font-size: 14px; }
+.passo.final { background: #0e1320; color: #f6f6f3; }
+.seta { color: #2f5bff; }
+
+.dados { display: flex; flex-wrap: wrap; gap: 40px; }
+.dados-texto { flex: 1 1 360px; display: flex; flex-direction: column; gap: 14px; }
+.tabela { flex: 2 1 560px; overflow-x: auto; border: 1px solid #e1e3dd; border-radius: 16px; background: #ffffff; }
+.w-100 { width: 100%; min-width: 560px; }
+.destaque-linha { background: #fff8ee; }
+
+.fases { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+.fase { background: #151c2e; border-color: #2a3550; border-radius: 20px; color: #f6f6f3; }
+.fase.atual { border: 2px solid #9db0ff; }
+.fase mat-card-content, .caminho mat-card-content { display: flex; flex-direction: column; gap: 12px; }
+.fase p { margin: 0; font-size: 15px; line-height: 1.6; color: #c5cbd8; }
+.nota { color: #9db0ff !important; font-size: 14px !important; }
+.rotulo-fase { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #7fd6a8; }
+.fase:not(.atual) .rotulo-fase { color: #8c96ab; }
+.titulo-fase { font-size: 22px; }
+
+.caminhos { display: flex; flex-wrap: wrap; gap: 18px; }
+.caminho { flex: 1 1 380px; background: #ffffff; border-color: #e1e3dd; border-radius: 20px; }
+.caminho.ambar { background: #fff8ee; border-color: #f2d58a; }
+.caminho .rotulo-fase { color: #2f5bff; }
+.caminho.ambar .rotulo-fase { color: #8a5a00; }
+.caminho ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 15px; line-height: 1.5; color: #3e4654; }
+
+.rodape {
+  background: #090d17; color: #8c96ab; padding: 28px 24px; display: flex; flex-wrap: wrap;
+  gap: 16px; justify-content: space-between; font-size: 14px;
+}
+.rodape a { color: #9db0ff; }

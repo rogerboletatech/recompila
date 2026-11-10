@@ -13,5 +13,11 @@ export const routes: Routes = [
       import('./features/versao-completa/versao-completa.page').then((m) => m.VersaoCompletaPage),
     title: 'Recompila: versão completa',
   },
+  {
+    path: 'plataforma',
+    loadComponent: () =>
+      import('./features/plataforma/plataforma.page').then((m) => m.PlataformaPage),
+    title: 'Recompila: como a plataforma funciona',
+  },
   { path: '**', redirectTo: '' },
 ];
