@@ -52,7 +52,7 @@ interface Perfil { readonly rotulo: string; readonly titulo: string; readonly te
   `],
 })
 export class QuemSectionComponent {
-  readonly areas = ['Estagiário', 'Dev júnior, pleno e sênior', 'Tech lead', 'Arquiteto', 'QA', 'Dados e DBA', 'Infra, SRE e cloud', 'Segurança', 'PM e PO', 'Design', 'Scrum Master e agilista'];
+  readonly areas = ['Estagiário', 'Dev júnior, pleno e sênior', 'Front end', 'Back end', 'Full stack', 'Tech lead', 'Arquiteto', 'QA', 'Dados e DBA', 'Infra, SRE e cloud', 'Segurança', 'PM e PO', 'Design', 'Scrum Master e agilista'];
 
   readonly perfis: readonly Perfil[] = [
     { rotulo: 'DEV DAS ANTIGAS', titulo: 'Você não está ultrapassado. Seu stack está.', texto: 'VB, COBOL, Delphi, procedures. Você sabe por que o sistema é do jeito que é. Vem atualizar as ferramentas e ensinar o que nenhum curso ensina.' },

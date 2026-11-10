@@ -8,7 +8,7 @@ export const INTENTS: Readonly<Record<IntentKey, Intent>> = {
     ancora: 'trilhas',
     trilha: 'devs',
     cards: [
-      { eyebrow: 'Sua trilha', destaque: 'Devs', detalhe: 'pontes do seu stack para o de hoje, com IA' },
+      { eyebrow: 'Sua trilha', destaque: 'Engenheiro', detalhe: 'full stack, com arquitetura e liderança técnica' },
       { eyebrow: 'Tempo', destaque: '10 min', detalhe: 'por dia, no celular' },
       { eyebrow: 'Você termina com', destaque: '1 site', detalhe: 'e um projeto validado' },
     ],
