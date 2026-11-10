@@ -13,6 +13,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { QuemSectionComponent } from './sections/quem-section';
 import { FuturoSectionComponent } from './sections/futuro-section';
 import { PrivacidadeSectionComponent } from './sections/privacidade-section';
+import { PapeisSectionComponent } from './sections/papeis-section';
 import {
   CLASSES,
   CORES_PERSONAGEM,
@@ -42,6 +43,7 @@ import {
     QuemSectionComponent,
     FuturoSectionComponent,
     PrivacidadeSectionComponent,
+    PapeisSectionComponent,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './versao-completa.page.html',
