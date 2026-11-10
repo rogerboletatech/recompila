@@ -11,14 +11,14 @@ export class IntentService {
     return INTENTS[chave];
   }
 
-  /** Procura palavras-chave no texto. Sem correspondência, cai em "stack". */
+  /** Procura palavras-chave no texto. Sem correspondência, cai em "mudar". */
   classificar(texto: string): IntentKey {
     const s = ` ${texto.toLowerCase()} `;
     for (const [chave, palavras] of REGRAS_INTENTS) {
       const achou = palavras.some((p) => (p.length <= 2 ? s.includes(` ${p} `) : s.includes(p)));
       if (achou) return chave;
     }
-    return 'stack';
+    return 'mudar';
   }
 
   /** Sugestões que não são a intenção atual. */

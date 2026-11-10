@@ -3,7 +3,7 @@ import { Intent, IntentKey } from '../models/intent.model';
 /** Conteúdo da conversa. Fica separado do componente para ser fácil de editar. */
 export const INTENTS: Readonly<Record<IntentKey, Intent>> = {
   stack: {
-    chip: 'Atualizar meu stack',
+    chip: 'Sou dev: front, back, full stack ou tech lead',
     titulo: 'Bora atualizar sem começar do zero.',
     ancora: 'trilhas',
     trilha: 'devs',
