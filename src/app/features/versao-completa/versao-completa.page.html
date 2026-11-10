@@ -1,0 +1,217 @@
+<header class="topo">
+  <nav class="barra" aria-label="Principal">
+    <a routerLink="/" class="marca" aria-label="Recompila, voltar para a conversa">
+      <span class="selo" aria-hidden="true">&gt;_</span>Recompila
+    </a>
+
+    <div class="links">
+      <a routerLink="/" class="modo">
+        <span class="ponto" aria-hidden="true"></span>Modo conversa
+      </a>
+      <a href="#trilhas">Trilhas</a>
+      <a href="#vagas">Vagas</a>
+      <a href="#personagem">Personagem</a>
+      <a href="#cadastro" class="cta">Fazer meu cadastro</a>
+    </div>
+
+    <button type="button" class="menu-botao" (click)="alternarMenu()"
+            [attr.aria-expanded]="menuAberto()" aria-controls="menu-mobile">
+      {{ menuAberto() ? 'Fechar' : 'Menu' }}
+    </button>
+  </nav>
+
+  @if (menuAberto()) {
+    <div id="menu-mobile" class="painel-mobile">
+      <a routerLink="/" class="troca">Conversa</a>
+      <span class="troca ativa" aria-current="page">Versão completa</span>
+      <span class="rotulo-menu">TRILHAS</span>
+      @for (t of tracks; track t.id) {
+        <button type="button" class="item-menu" (click)="escolherTrilha(t.id)">
+          <span>{{ t.label }}</span><span class="sub">{{ t.sub }}</span>
+        </button>
+      }
+      <a href="#vagas" (click)="fecharMenu()" class="item-menu">Vagas</a>
+      <a href="#personagem" (click)="fecharMenu()" class="item-menu">Personagem</a>
+      <a href="#cadastro" (click)="fecharMenu()" class="cta-mobile">Fazer meu cadastro</a>
+    </div>
+  }
+</header>
+
+<section id="topo" class="hero">
+  <div class="hero-texto">
+    <p class="selo-hero"><span class="pulso" aria-hidden="true"></span>Temporada 1 aberta · devs, produto, QA e Kids · de graça</p>
+    <h1>Quem faz tecnologia, <span class="destaque">se recompilando juntos</span></h1>
+    <p class="lead">Quem tem estrada ensina negócio e fundamento. Quem chegou agora ensina ferramenta. Todo mundo aprende IA e arquitetura, monta o próprio site e chega na vaga com segurança. 10 minutos por dia, pelo celular.</p>
+    <div class="acoes-hero">
+      <a mat-flat-button routerLink="/" class="cta-principal">Descobrir meu caminho em 2 minutos</a>
+      <a mat-stroked-button href="#cadastro">Fazer meu cadastro</a>
+    </div>
+    <dl class="numeros">
+      <div><dt>10 min</dt><dd>por dia útil</dd></div>
+      <div><dt>R$ 0</dt><dd>para entrar</dd></div>
+      <div><dt>1 site</dt><dd>seu, no ar</dd></div>
+      <div><dt>0 culpa</dt><dd>no fim de semana</dd></div>
+    </dl>
+  </div>
+
+  <figure class="celular" aria-label="Exemplo do grupo no celular: pílula do dia, áudio de um minuto e pontos ganhos">
+    <div class="cabecalho-chat">
+      <span class="avatar" aria-hidden="true">&gt;_</span>
+      <div><strong>Recompila · Comunidade</strong><span>quem faz tecnologia</span></div>
+    </div>
+    <p class="bolha">Pílula de hoje: peça para a IA explicar um código seu, linha a linha. 10 minutos.</p>
+    <p class="bolha minha">Áudio · 1:04</p>
+    <p class="bolha"><span class="ganho">+25 pontos.</span> Sequência de 3 dias. Seu post já está no seu site.</p>
+  </figure>
+</section>
+
+<div class="faixa" aria-hidden="true">
+  <div class="faixa-trilho">
+    <span>VB6 → Angular</span><span>·</span><span>Procedure → Java 21</span><span>·</span><span>Tortoise → Git</span><span>·</span><span>Batch → Eventos</span><span>·</span><span>Desenho → Spec → Código com IA</span><span>·</span><span>Currículo antigo → Site no ar</span><span>·</span><span>Insegurança → Vaga</span><span>·</span>
+  </div>
+</div>
+
+<section id="trilhas" class="bloco branco">
+  <div class="cabecalho-secao">
+    <p class="kicker">// escolha sua trilha</p>
+    <h2>Quatro trilhas. Uma comunidade.</h2>
+    <p class="lead escuro">Cada trilha tem o seu foco, mas todas se encontram nos mesmos cases. O dev aprende com o PM, o QA com o dev, e todo mundo ensina o que domina.</p>
+  </div>
+
+  <mat-button-toggle-group class="seletor-trilha" [value]="trilhaId()" (change)="escolherTrilha($event.value)"
+                           aria-label="Trilhas" hideSingleSelectionIndicator>
+    @for (t of tracks; track t.id) {
+      <mat-button-toggle [value]="t.id">{{ t.label }}</mat-button-toggle>
+    }
+  </mat-button-toggle-group>
+
+  <article class="painel-trilha" [style.background]="trilha().fundo" [style.border-top-color]="trilha().cor" role="tabpanel">
+    <div class="coluna-principal">
+      <span class="tag" [style.background]="trilha().cor">{{ trilha().tag }}</span>
+      <h3>{{ trilha().titulo }}</h3>
+      <p><strong>Para quem:</strong> {{ trilha().para }}</p>
+      <ul class="aprende">
+        @for (item of trilha().aprende; track item) {
+          <li><span aria-hidden="true" [style.color]="trilha().cor">✓</span>{{ item }}</li>
+        }
+      </ul>
+    </div>
+    <aside class="coluna-lateral">
+      <div class="caixa escura"><span class="rotulo-caixa verde">IA DO JEITO CERTO</span><span>{{ trilha().ia }}</span></div>
+      <div class="caixa"><span class="rotulo-caixa">PROJETO FINAL</span><span>{{ trilha().projeto }}</span></div>
+      <div class="acoes-trilha">
+        <a mat-flat-button routerLink="/" class="cta-principal">Começar esta trilha</a>
+        <a mat-stroked-button [href]="'#' + trilha().ancora">{{ trilha().linkLabel }}</a>
+      </div>
+    </aside>
+  </article>
+</section>
+
+<section id="vagas" class="bloco">
+  <div class="cabecalho-secao">
+    <p class="kicker">// raio-x da vaga</p>
+    <h2>Marque o que você já domina. O resto vira sua trilha.</h2>
+    <p class="lead escuro">Quanto mais itens marcados, mais perto você está da vaga. Os gaps aparecem na hora.</p>
+  </div>
+
+  <div class="raiox">
+    <mat-chip-listbox multiple aria-label="Requisitos que você já domina" class="requisitos">
+      @for (r of requisitos; track r.id) {
+        <mat-chip-option [selected]="dominados().has(r.id)" (selectionChange)="alternarRequisito(r.id)">
+          {{ r.label }}
+        </mat-chip-option>
+      }
+    </mat-chip-listbox>
+
+    <div class="resultado" aria-live="polite">
+      <strong class="percentual">{{ percentual() }}%</strong>
+      <span>{{ contagem() }} de {{ requisitos.length }} requisitos</span>
+      <p class="mensagem">{{ mensagemRaioX() }}</p>
+      <p class="gaps"><strong>Gaps:</strong> {{ gaps().length ? gaps().join(', ') + '.' : 'nenhum gap. Hora de aplicar!' }}</p>
+    </div>
+  </div>
+</section>
+
+<section id="personagem" class="bloco claro">
+  <div class="cabecalho-secao">
+    <p class="kicker">// seu personagem</p>
+    <h2>Escolha quem você vai ser no grupo.</h2>
+    <p class="lead escuro">Seu personagem aparece no ranking no lugar do nome, se você quiser ficar mais discreto. Você escolhe a classe e a cor, ou pede uma sugestão.</p>
+  </div>
+
+  <div class="personagem">
+    <div class="controles">
+      <mat-form-field appearance="outline" class="campo-nome">
+        <mat-label>Nome do personagem</mat-label>
+        <input matInput [(ngModel)]="nomePersonagem" name="nomePersonagem" maxlength="24" autocomplete="off" />
+      </mat-form-field>
+      <button mat-stroked-button type="button" (click)="sugerirNome()">
+        <mat-icon>auto_awesome</mat-icon> Sugerir um nome
+      </button>
+
+      <p class="rotulo-campo">Classe</p>
+      <mat-button-toggle-group class="classes" [value]="classeId()" (change)="classeId.set($event.value)"
+                               aria-label="Classe do personagem" hideSingleSelectionIndicator>
+        @for (c of classes; track c.id) {
+          <mat-button-toggle [value]="c.id">
+            <span class="glifo" aria-hidden="true">{{ c.glifo }}</span> {{ c.nome }}
+          </mat-button-toggle>
+        }
+      </mat-button-toggle-group>
+
+      <p class="rotulo-campo">Cor</p>
+      <div class="cores" role="radiogroup" aria-label="Cor do personagem">
+        @for (cor of cores; track cor; let i = $index) {
+          <button type="button" role="radio" class="cor" [style.background]="cor"
+                  [attr.aria-checked]="corIndex() === i" [attr.aria-label]="'Cor ' + (i + 1)"
+                  [class.escolhida]="corIndex() === i" (click)="corIndex.set(i)"></button>
+        }
+      </div>
+    </div>
+
+    <article class="cartao-personagem" [style.border-top-color]="corAtual()">
+      <span class="avatar-grande" [style.background]="corAtual()">{{ inicialPersonagem() }}</span>
+      <strong class="nome-cartao">{{ rotuloPersonagem() }}</strong>
+      <span class="classe-cartao"><span aria-hidden="true">{{ classeAtual().glifo }}</span> {{ classeAtual().nome }}</span>
+      <p>{{ classeAtual().trilha }}</p>
+      <span class="barra-xp"><span [style.background]="corAtual()"></span></span>
+    </article>
+  </div>
+</section>
+
+<section id="cadastro" class="bloco escuro">
+  <div class="cabecalho-secao">
+    <p class="kicker">// cadastro</p>
+    <h2>Entre na temporada 1. É de graça.</h2>
+    <p class="lead">Conta o seu perfil e como você quer participar. A gente chama no grupo com a próxima pílula.</p>
+  </div>
+
+  @if (!cadastroEnviado()) {
+    <form class="cadastro" (ngSubmit)="enviarCadastro()">
+      <mat-form-field appearance="outline" class="campo">
+        <mat-label>Seu nome</mat-label>
+        <input matInput name="nome" [(ngModel)]="nomeCadastro" required autocomplete="name" />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="campo">
+        <mat-label>Como você se encaixa?</mat-label>
+        <mat-select name="perfil" [(ngModel)]="perfilCadastro">
+          @for (p of perfis; track p) {
+            <mat-option [value]="p">{{ p }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <button mat-flat-button type="submit" class="cta-principal" [disabled]="!nomeCadastro().trim()">
+        Quero entrar na temporada 1
+      </button>
+    </form>
+  } @else {
+    <p class="confirmacao" role="status">
+      Recebemos, {{ nomeCadastro().trim().split(' ')[0] }}. A gente chama no grupo com a próxima pílula.
+    </p>
+  }
+</section>
+
+<footer class="rodape">
+  <span>Recompila · arquitetura aberta</span>
+  <a routerLink="/">Voltar para a conversa</a>
+</footer>
