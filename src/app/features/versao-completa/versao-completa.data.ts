@@ -30,9 +30,9 @@ export const TRACKS: readonly Track[] = [
   },
   {
     id: 'pm', label: 'Produto', sub: 'PMs, POs e agilistas', cor: '#B7791F', fundo: '#FFF8EB',
-    tag: 'TRILHA PRODUTO', titulo: 'Produto com fundamento',
-    para: 'PMs, POs e Scrum Masters que querem método e um próximo passo na carreira.',
-    aprende: ['Discovery: problema antes da solução', 'Brainstorming que funciona: brainwriting e Crazy 8s', 'Event Storming junto com os devs', 'Métricas de fluxo: lead time, throughput e gargalos', 'Dizer não com evidência', 'Para quem vem de Scrum Master: caminho para delivery ou produto'],
+    tag: 'TRILHA PRODUTO', titulo: 'Produto e IT lead com fundamento de engenharia',
+    para: 'PMs, POs, Scrum Masters e IT leads (coordenadores de sistemas) que querem método e entender a engenharia por trás do produto.',
+    aprende: ['Discovery: problema antes da solução', 'Brainstorming que funciona: brainwriting e Crazy 8s', 'Event Storming junto com os devs', 'Métricas de fluxo: lead time, throughput e gargalos', 'Dizer não com evidência', 'Entender engenharia: o que é possível, o custo e o risco', 'IT lead: apoio ao PM na definição do projeto', 'Para quem vem de Scrum Master: caminho para delivery ou produto'],
     ia: 'IA para prototipar, analisar dados do time e sintetizar entrevistas.',
     projeto: 'Discovery e Event Storming de um case, entregue a um squad que constrói.',
     ancora: 'pms', linkLabel: 'Ver a trilha de Produto',

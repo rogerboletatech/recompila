@@ -52,13 +52,14 @@ interface Perfil { readonly rotulo: string; readonly titulo: string; readonly te
   `],
 })
 export class QuemSectionComponent {
-  readonly areas = ['Estagiário', 'Dev júnior, pleno e sênior', 'Front end', 'Back end', 'Full stack', 'Tech lead', 'Arquiteto', 'QA', 'Dados e DBA', 'Infra, SRE e cloud', 'Segurança', 'PM e PO', 'Design', 'Scrum Master e agilista'];
+  readonly areas = ['Estagiário', 'Dev júnior, pleno e sênior', 'Front end', 'Back end', 'Full stack', 'Tech lead', 'IT lead e coordenador de sistemas', 'Arquiteto', 'QA', 'Dados e DBA', 'Infra, SRE e cloud', 'Segurança', 'PM e PO', 'Design', 'Scrum Master e agilista'];
 
   readonly perfis: readonly Perfil[] = [
     { rotulo: 'DEV DAS ANTIGAS', titulo: 'Você não está ultrapassado. Seu stack está.', texto: 'VB, COBOL, Delphi, procedures. Você sabe por que o sistema é do jeito que é. Vem atualizar as ferramentas e ensinar o que nenhum curso ensina.' },
     { rotulo: 'DEV NOVO, VEM TAMBÉM', titulo: 'Você manja a ferramenta. Falta entender o porquê.', texto: 'Convive com quem segurou sistema crítico por anos. Ensina Angular e Git, aprende negócio, arquitetura e como as coisas quebram de verdade.' },
     { rotulo: 'DEV BOM QUE QUER IR ALÉM', titulo: 'Você entrega. Agora quer fundamento.', texto: 'Desenhar soluções resilientes, defender uma arquitetura e saber dizer não para projeto que nasce sem discovery.' },
     { rotulo: 'EM RECOLOCAÇÃO', titulo: 'Foi desligado? Vem com prioridade.', texto: 'Muitas vezes o que faltou foi detalhe: Git, teste, um projeto para mostrar. A gente acha esses detalhes e fecha um por um.' },
+    { rotulo: 'IT LEAD · COORDENADOR DE SISTEMAS', titulo: 'Você apoia o produto. Precisa entender a engenharia.', texto: 'Ajuda o PM a definir o projeto com visão técnica: o que é viável, quanto custa e onde está o risco. Aqui você aprende a decidir junto com o time.' },
     { rotulo: 'PRODUCT MANAGER', titulo: 'Você conhece produto. Falta o método.', texto: 'Discovery de verdade e Event Storming para desenhar o negócio junto com os devs, antes de escrever a primeira história.' },
   ];
 }
